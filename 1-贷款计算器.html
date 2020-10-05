@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贷款计算器</title>
+    <style>
+        /*这是一个css样式表：定义了程序输出的样式*/
+        .output {
+            font-weight: bold;
+        }
+
+        /*计算结果定义为粗体*/
+        #payment {
+            text-decoration: underline;
+        }
+
+        /*定义id="payment"的元素样式*/
+        #graph {
+            border: solid black 1px;
+        }
+
+        th,
+        td {
+            vertical-align: top;
+        }
+
+        /*表格单元格式对齐为顶端对齐*/
+    </style>
+</head>
+
+<body>
+    <!--
+这是一个html表格，其中包含<input>元素可以用来输入数据。
+程序将在<span>元素中显示计算结果，这些元素都具有类似 "intensest"  "years"的id,这些id将在表格下面的javascript代码中用到，我们注意到，有一些input元素
+    定义了"onchange" 或"onclick"的事件处理程序，以便用户在输入数据或者点击inputs时执行指定的javascript代码段。
+-->
+
+    <table>
+        <tr>
+            <th>Enter loan Data:</th>
+            <td></td>
+            <th>Loan balance, Cumulative Equity,and Interest payments </th>
+        </tr>
+        <tr>
+            <td>Amount of the loan($):</td>
+            <td><input id="amount" type="text" onchange="calculate();"></td>
+            <td rowspan=8><canvas id="graph" width="400" height="250"></canvas></td>
+        </tr>
+        <tr>
+            <td>Annual Interest(%):</td>
+            <td><input id="apr" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Repayment period(years):</td>
+            <td><input id="years" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td> Zipcode (to find lenders):</td>
+            <td><input id="Zipcode" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <th>Approximate payments:</th>
+            <td><button onclick="calculate();">calculate()</button></td>
+        </tr>
+        <tr>
+            <td>Monthly payments :</td>
+            <td>$ <span class="output" id="payment"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Total payment:</td>
+            <td>$ <span class="output" id="total"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Total interest:</td>
+            <td>$ <span class="output" id="totalinterest"></span></td>
+        </tr>
+        <tr>
+            <th>sponsors:</th>
+            <td id="colspan=2">
+                Apply for your loan with one of these fine lenders:
+                <div id="lenders"></div>
+            </td>
+        </tr>
+
+    </table>
+    <!--随后是javascript 代码，这些代码内嵌在了一个 script 标签里 -->
+    <!--通常情况下，这些脚本代码应该放在<head>标签中 -->
+    <!--将javascript代码放在html代码之后仅仅是为了方便理解-->
+    <script>
+        "use strict"; //如果浏览器支持的话，则开启ECMAScript 5 的严格模式
+        /*
+         *这里的脚本定义了calculate()函数,在html代码中绑定事件处理程序时会调用它
+         *这个函数从<input>元素中读取数据，计算贷款赔付信息，并将结果显示在<span>元素中
+         *同样，这里还保存了用户数据，显示了贷人链接并绘制出了图表
+         */
+         function calculate() {
+             //查找文档中用于输入输出的元素
+             
+         }
+    </script>
+</body>
+
+</html>
